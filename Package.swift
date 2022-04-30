@@ -27,7 +27,12 @@ let package = Package(
             dependencies: [
                 .product(name: "SnapKit", package: "SnapKit"),
                 .product(name: "Then", package: "Then"),
-            ]),
+            ],
+            path: "Sources",
+            resources: [
+                .process("Resource/Fonts")
+            ]
+        ),
         .testTarget(
             name: "SobokKitTests",
             dependencies: ["SobokKit"]),
