@@ -30,7 +30,8 @@ let package = Package(
             ],
             path: "Sources",
             resources: [
-                .process("Resource/Fonts")
+                .process("Resource/Fonts"),
+                .process("Resource/Color.xcassets"),
             ]
         ),
         .testTarget(
