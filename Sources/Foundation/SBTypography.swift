@@ -77,6 +77,16 @@ extension SBTypography.Style {
     
 }
 
+extension SBTypography.Style {
+    
+    public var font: UIFont {
+        guard let font = UIFont(name: description.fontType.name, size: description.size) else {
+            return UIFont()
+        }
+        return font
+    }
+}
+
 extension UILabel {
     
     public func sbTypo(_ style: SBTypography.Style, color: UIColor? = nil) {
@@ -87,7 +97,7 @@ extension UILabel {
                 string: text,
                 attributes: [
                     .foregroundColor: color ?? UIColor.black,
-                    .font: style.description.fontType,
+                    .font: style.font,
                     .kern: style.description.spacing,
                     .paragraphStyle: paragraphStyle
                 ]
